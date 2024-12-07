@@ -1,10 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 
-interface User {
+export interface User {
   handle: string;
   name: string;
   email: string;
   password: string;
+  description: string;
 }
 
 const userSchema = new Schema({
@@ -31,6 +32,10 @@ const userSchema = new Schema({
     type: String,
     require: true,
     trim: true,
+  },
+  description: {
+    type: String,
+    default: "",
   },
 });
 
